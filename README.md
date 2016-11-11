@@ -1,3 +1,3 @@
-# Memorial Rain Dat
+# Memorial Rain Data
 
-This website is a graphical representation of rain data at The Memorial Golf Tournament in Dublin, Ohio.
+A graphical representation of rainfall data from The Memorial Golf Tournament in Dublin, Ohio.
