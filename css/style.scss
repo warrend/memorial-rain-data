@@ -1,0 +1,412 @@
+/**
+ * The Memorial Tournament Rain Index
+ *
+ * This is a site I created based on weather information provided 
+ * on The Memorial Tournaments website
+ * 
+ * created by Daniel Warren (danielwarren.io)
+ * @dl_warren Instagram
+ *
+ */
+
+ /* ==========================================================================
+   Variables
+   ========================================================================== */
+
+$main-color: #0C6045;
+$secondary-color: #333333;
+$third-color: #12375E;
+$third-color-layer: darken($third-color, 10%);
+$script-color: #D37F54;
+
+$main-font-color: #333;
+$graph-color: #fff;
+$secondary-font-color: lighten($main-font-color, 33%);
+$text-box-background: #efefef;
+
+$main-font: 'Open Sans', Helvetica, sans-serif;
+$main-font-size: 120%;
+$main-header-font: 'Open Sans Condensed', Helvetica, sans-serif;
+
+$graph-padding: 3.66em 0;
+
+ /* Rain % variables
+ 	========================================================================== */
+
+
+@mixin graph-width($width) {
+  width: $width;
+  padding: $graph-padding;
+  margin-bottom: 2em;
+  text-align: center;
+}
+
+@mixin grandslam($width) {
+  width: $width;
+  padding: $graph-padding;
+}
+
+@mixin inner-text {
+	color: $graph-color;
+	font-size: 3em;
+	font-weight: 800;
+	margin: 0 25px;
+	text-align: center;
+}
+
+@mixin body {
+	font-family: $main-font;
+	color: $main-font-color;
+	font-size: $main-font-size;
+}
+
+@mixin header-font {
+	font-family: $main-header-font;
+	font-size: 2em;
+	font-weight: 700;
+}
+
+@mixin text-container {
+	width: 66%;
+	margin: 0 auto 2em auto;
+	background: $text-box-background;
+	clear: both;
+}
+
+/* ==========================================================================
+   Basics
+   ========================================================================== */
+
+body {
+	@include body; 
+}
+
+h1, h2, h3, h4, h5 {
+	font-weight: normal;
+}
+
+header {
+	padding: $graph-padding;
+	text-align: center;
+	border-bottom: solid 1px #ccc;
+	margin-bottom: 3em;
+	background: $main-color;
+}
+
+footer {
+	padding: $graph-padding;
+	margin-top: 3em;
+	background: $main-color;
+}
+
+.foot-container {
+	text-align: center;
+}
+
+h1 {
+	font-family: 'Open Sans Condensed', Helvetica, sans-serif;
+	font-size: 4em;
+	font-weight: 700;
+	margin-bottom: 0;
+	color: $graph-color;
+}
+
+h2 {
+	font-size: 2em;
+	font-family: 'Parisienne', sans-serif;
+	color: $script-color;
+}
+
+h3 {
+	@include header-font;
+}
+
+.about {
+	text-align: center;
+}
+
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
+
+a {
+  color: #222;
+  text-decoration: none; 
+}
+
+.about-link {
+  color: $script-color; 
+}
+
+a:visited {
+  text-decoration: none;
+  color: none; 
+}
+
+footer a:hover {
+  text-decoration: none;
+  color: #ccc; 
+}
+
+i a:hover {
+	color: #ccc;
+}
+
+a:focus, a:hover, a:active {
+  text-decoration: none;
+  color: #222; 
+}
+
+
+/*  Color variable classes
+ 	========================================================================== */
+
+
+
+.main-color {
+	background: $main-color;
+}
+
+.secondary-color {
+	background: $secondary-color;
+}
+
+.third-color {
+	background: $third-color;
+}
+
+/* ==========================================================================
+   Classes
+   ========================================================================== */
+
+.container {
+	width: 90%;
+	margin: 0 auto;
+}
+
+.text-container {
+	@include text-container;
+}
+
+.text {
+	padding: 1.5em 3em 3em 3em; 
+}
+
+.row {
+	@include graph-width(100%);
+	background: $secondary-color;
+}
+
+.graph-rain-tourney {
+	@include graph-width(70%);
+	background: $third-color;
+	float: left;
+}
+
+.hover {
+	opacity: 1;
+}
+
+.graph-dry-tourney:hover .hover {
+	opacity: 1;
+}
+
+.graph-dry-tourney {
+	@include graph-width(30%);
+	background: $main-color;
+	float: left;
+}
+
+.graph-rain-days {
+	@include graph-width(35%);
+	background: $third-color;
+	float: left;
+}
+
+.graph-dry-days {
+	@include graph-width(65%);
+	background: $main-color;
+	float: left;
+}
+
+.graph-rain-thurs {
+	@include graph-width(23%);
+	background: $third-color;
+	float: left;
+}
+
+.graph-dry-thurs {
+	@include graph-width(77%);
+	background: $main-color;
+	float: left;
+}
+
+.graph-rain-fri {
+	@include graph-width(33%);
+	background: $third-color;
+	float: left;
+}
+
+.graph-dry-fri {
+	@include graph-width(67%);
+	background: $main-color;
+	float: left;
+}
+
+.graph-rain-sat {
+	@include graph-width(48%);
+	background: $third-color;
+	float: left;
+}
+
+.graph-dry-sat {
+	@include graph-width(52%);
+	background: $main-color;
+	float: left;
+}
+
+.graph-dry-sun {
+	@include graph-width(67%);
+	background: $main-color;
+	float: left;
+}
+
+.graph-rain-sun {
+	@include graph-width(33%);
+	background: $third-color;
+	float: left;
+}
+
+.rain-tiger {
+	@include graph-width(100%);
+	background: $main-color;
+	float: left;
+}
+
+.rain-kenny {
+	@include graph-width(100%);
+	background: $main-color;
+	float: left;
+}
+
+.rain-jack {
+	@include graph-width(100%);
+	background: $main-color;
+	float: left;
+}
+
+
+.grandslam {
+	@include grandslam(50%);
+	float: left;
+}
+
+.inner-text {
+	@include inner-text;
+}
+
+.hide {
+	display: none;
+}	
+
+.layer:hover .hide {
+	display: block;
+}
+
+.layer:hover .main {
+	display: none;
+}
+
+
+/* ==========================================================================
+   Social Media & Icons
+   ========================================================================== */
+
+i {
+	color: $script-color;
+	margin: 0 .33em;
+}
+
+.arrow-back {
+  position: absolute;
+  top: 35px;
+  left: 2.5%;
+}
+
+.material-icons {
+  font-size: 2em;
+  border: 2px solid $script-color;
+  border-radius: 50%;
+}
+
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media (max-width: 1200px) {
+	/*.rain-tourney, .dry-tourney, .rain-days, .dry-days, .rain-thurs, .dry-thurs, .rain-fri, .dry-fri, .rain-sat, .dry-sat, .rain-sun, .dry-sun*/
+	[class^="graph-"] {
+		@include graph-width(50%);
+	}
+}
+
+@media (max-width: 900px) {
+	.inner-text {
+		font-size: 2.33em;
+	}
+
+	h1 {
+		font-size: 3em;
+	}
+}
+
+@media (max-width: 768px) {
+	
+}
+
+@media (max-width: 650px) {
+	h2 {
+		font-size: 1.33em;
+	}
+	/*.rain-tourney, .dry-tourney, .rain-days, .dry-days, .rain-thurs, .dry-thurs, .rain-fri, .dry-fri, .rain-sat, .dry-sat, .rain-sun, .dry-sun*/ 
+	[class^="graph-"] {
+		@include graph-width(100%);
+	}
+	.inner-text {
+		font-size: 2em;
+	}
+	.text {
+		padding: 1.33em;
+	}
+	
+	.text-container {
+		width: 100%;
+		h3 {
+			padding: 1.5em 1em 1.5em 1;
+			p {
+				padding: 0;
+			}
+		}
+	}
+}
+
+@media (max-width: 495px) {
+	.small {
+		display: block;
+	}
+}
+
+
+
+
